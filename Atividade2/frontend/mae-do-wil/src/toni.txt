@@ -1,0 +1,28 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [texto, setTexto] = useState('');
+
+  // Função para verificar o texto e exibir o alerta
+  const verificarTexto = () => {
+    if (texto === 'SENAI_') {
+      alert('SENAI!!!');
+    }
+  };
+
+  return (
+    <div>
+      <h1>Campo de Texto</h1>
+      <input
+        type="text"
+        value={texto}
+        onChange={(e) => setTexto(e.target.value)} // Atualiza o estado conforme o usuário digita
+        placeholder="Digite algo"
+      />
+      <button onClick={verificarTexto}>Verificar Texto</button>
+    </div>
+  );
+}
+
+export default App;
+
